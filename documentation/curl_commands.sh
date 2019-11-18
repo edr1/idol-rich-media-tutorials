@@ -17,3 +17,5 @@ curl http://localhost:14000/a=process&source=http://english.streaming.aljazeera.
 curl http://localhost:14000/action=QueueInfo&QueueName=process&QueueAction=getstatus&Token=MTI3LjAuMS4xOjE0MDAwOlBST0NFU1M6MTU3MzUwOTQyOTMxNjAwNDg4OTQ1MTI0
 curl http://localhost:14000/action=QueueInfo&QueueName=process&QueueAction=progress&Token=MTI3LjAuMS4xOjE0MDAwOlBST0NFU1M6MTU3MzUwOTQyOTMxNjAwNDg4OTQ1MTI0
 curl http://localhost:14000/action=QueueInfo&QueueName=process&QueueAction=stop
+
+ffmpeg -f video4linux2 -i /dev/video0 -c:v libx264 -an -f flv rtmp://localhost:1935/app/unique_stream_name
